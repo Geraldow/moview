@@ -59,6 +59,7 @@ Framework:
   - Spring Boot
   - Tailwind CSS
   - Thymeleaf
+
 Plugins:
   - Atom Material Icons
   - File Watchers
