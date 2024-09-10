@@ -30,7 +30,7 @@ public class PeliculaController {
             return "/modules/movieList";
     }
 
-    @RequestMapping ( "new" )
+    @RequestMapping ( "/new" )
     public String newMovie ( Model model ) {
         com.autocine.moview.models.Pelicula pelicula = new com.autocine.moview.models.Pelicula();
 
