@@ -66,6 +66,10 @@ Plugins:
   - Lombok
 
 
+# Base de Datos
+https://pastebin.com/03kSqZyk
+
+
 ## Equipo 
 - Geraldo Fair Jaramillo Florida [71992956@certus.edu.pe]
 - Alessandro Miguel Arias Marquina [76287712@certus.edu.pe]
