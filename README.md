@@ -67,7 +67,7 @@ Plugins:
 
 
 # Base de Datos
-https://pastebin.com/03kSqZyk
+- [https://pastebin.com/03kSqZyk]
 
 
 ## Equipo 
