@@ -4,7 +4,7 @@
 Disfruta de una experiencia única bajo las estrellas con nuestras películas de estreno y un menú de snacks irresistibles. Reserva tu lugar ahora y vive la magia del cine al aire libre desde la comodidad de tu auto.
 
 ## Instalación
-### Para descargar el código fuente de Yven, sigue estos pasos:
+### Para descargar el código fuente de Moview, sigue estos pasos:
 1. Abre una terminal o línea de comandos en tu sistema.
 2. Ubicarse en el escritorio.
 3. Crear una carpeta llamada Proyecto.
