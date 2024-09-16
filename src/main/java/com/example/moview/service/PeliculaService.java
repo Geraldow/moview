@@ -46,6 +46,4 @@ public class PeliculaService {
     public void eliminarPeliculaPorId( Integer id ){
         peliculaRepository.deleteById(id);
     }
-
-
 }
