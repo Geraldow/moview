@@ -43,6 +43,7 @@ public class PeliculaServiceTest {
                 123,
                 "20th Century Fox",
                 "English",
+                "Fantasía",
                 "HD",
                 "An epic adventure in Middle Earth...",
                 "Lucas Luis Miguel Jaramillo Ruiz"
@@ -55,6 +56,7 @@ public class PeliculaServiceTest {
                 124,
                 "Retro",
                 "Español",
+                "Desconocido",
                 "3D",
                 "Una épica aventura en la Tierra Media...",
                 "Un desconocido"
@@ -103,9 +105,10 @@ public class PeliculaServiceTest {
         assertThat(result.getDuracion(), is(124));
         assertThat(result.getClasificacion(), is("Retro"));
         assertThat(result.getIdioma(), is("Español"));
+        assertThat(result.getCategoria(), is("Desconocido"));
         assertThat(result.getFormato(), is("3D"));
         assertThat(result.getTrama(), is("Una épica aventura en la Tierra Media..."));
-        assertThat(result.getDirector(), is("Lucas"));
+        assertThat(result.getDirector(), is("Un desconocido"));
         // Cambiar el director "Lucas" a "Un desconocido" para que se validen todos los datos
     }
 }
