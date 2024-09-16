@@ -18,44 +18,44 @@ public class PeliculaController {
     private PeliculaService peliculaService;
 
     // === Path for list movie === //
-    @GetMapping("/lista")
+    @RequestMapping("/lista")
     public String mostrarPeliculas(Model model){
 
         List<Pelicula> listaPeliculas = peliculaService.buscarPeliculas();
         model.addAttribute("listaPeliculas", listaPeliculas);
 
-        return "lista-peliculas";
+        return "/peliculas/lista-peliculas";
     }
 
     // === Path for a new movie === //
-    @GetMapping("/nuevo")
+    @RequestMapping("/nuevo")
     public String nuevaPelicula( Model model ){
         Pelicula pelicula = new Pelicula();
         model.addAttribute("pelicula", pelicula);
-        return "nueva-pelicula";
+        return "/peliculas/nueva-pelicula";
     }
 
     // === Path for save a movie === //
-    @GetMapping("/guardar")
+    @RequestMapping("/guardar")
     public String crearPelicula(@ModelAttribute("pelicula") Pelicula pelicula){
         peliculaService.crearPelicula(pelicula);
-        return "redirect:lista-peliculas";
+        return "redirect:/peliculas/lista";
     }
 
     // === Path for update a movie by id === //
-    @GetMapping("/actualizar/{id}")
+    @RequestMapping("/actualizar/{id}")
     public ModelAndView editarPelicula (@PathVariable (name = "id") int id){
-        ModelAndView modelAndView = new ModelAndView("editar-pelicula");
+        ModelAndView modelAndView = new ModelAndView("/peliculas/editar-pelicula");
         Pelicula pelicula = peliculaService.buscarPeliculaPorId(id);
         modelAndView.addObject("pelicula", pelicula);
         return modelAndView;
     }
 
     // === Path for delete a movie by id === //
-    @GetMapping("eliminar/{id}")
+    @RequestMapping("eliminar/{id}")
     public String eliminarPelicula(@PathVariable (name = "id") int id){
         peliculaService.eliminarPeliculaPorId(id);
-        return "redirect:list-peliculas";
+        return "redirect:/peliculas/lista";
     }
 
 }
