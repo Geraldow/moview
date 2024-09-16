@@ -65,7 +65,7 @@ public class PeliculaServiceTest {
 
     // === Test para crear una película ==== //
     @Test
-    public void testCrearPelicula_shouldUpdateExistingMovie() {
+    public void testCrearPelicula_actualizarPeliculaExistente() {
 
         // === Given === //
         /**
