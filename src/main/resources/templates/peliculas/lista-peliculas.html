@@ -42,11 +42,12 @@
             background-color: rgba(255, 255, 255, 0.1); /* Fondo de la tabla */
         }
     </style>
+    <link th:href="@{/main.css}" rel="stylesheet" />
 </head>
 <body>
 <div align="center">
     <h2>Películas</h2>
-    <a th:href="@{/peliculas/nuevo}" class="title-pelicula">Crear nueva película <i class="fa-solid fa-caret-right"></i></a>
+    <a th:href="@{/peliculas/nuevo}" class="title-pelicula text-red-200">Crear nueva pelicula <i class="fa-solid fa-caret-right"></i></a>
     <br/><br>
     <table border="1" cellpadding="20" class="table table-dark">
         <thead class="titulos">
