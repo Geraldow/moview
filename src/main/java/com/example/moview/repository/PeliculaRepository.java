@@ -21,14 +21,14 @@ import org.springframework.stereotype.Repository;
  * <strong>Métodos heredados de JpaRepository</strong>
  * <br>
  * <ul>
- *     <li>findAll():** Devuelve una lista con todas las películas.</li>
- *     <li>findById(Integer id):** Busca una película por su ID.</li>
- *     <li>save(Pelicula pelicula):** Guarda una película en la base de datos (crea o actualiza).</li>
- *     <li>delete(Pelicula pelicula):** Elimina una película de la base de datos.</li>
- *     <li>deleteById(Integer id):** Elimina una película por su ID.</li>
+ *     <li>findAll(): Devuelve una lista con todas las películas.</li>
+ *     <li>findById(Integer id): Busca una película por su ID.</li>
+ *     <li>save(Pelicula pelicula): Guarda una película en la base de datos (crea o actualiza).</li>
+ *     <li>delete(Pelicula pelicula): Elimina una película de la base de datos.</li>
+ *     <li>deleteById(Integer id): Elimina una película por su ID.</li>
  * </ul>
  * Además de los métodos heredados, también podemos definir métodos personalizados para realizar
- * consultas según la idea de negocio.**
+ * consultas según la idea de negocio.
  * @see org.springframework.data.jpa.repository.JpaRepository
  */
 @Repository
