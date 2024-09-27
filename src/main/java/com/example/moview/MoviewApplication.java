@@ -15,7 +15,6 @@ import org.springframework.cache.annotation.EnableCaching;
  * @since 2024
  */
 @SpringBootApplication
-@EnableCaching
 public class MoviewApplication {
 
 /**
