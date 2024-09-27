@@ -7,6 +7,20 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * <strong>Servicio de Película</strong>
+ *  <br>
+ * Esta clase define los servicios relacionados con las películas.
+ * Un servicio en Spring es una clase que contiene la lógica de negocio de la aplicación.
+ * En este caso, el servicio de películas se encarga de realizar operaciones relacionadas
+ * con las películas, como buscar, crear, actualizar y eliminar películas.
+ * <br><br>
+ * <strong>Anotación @Service</strong>
+ * <br>
+ *   Indica que esta clase es un componente de Spring y que proporciona servicios
+ *   relacionados con la lógica de negocio. Spring escanea las clases anotadas con
+ *   `@Service` para encontrar los métodos que implementan las funcionalidades del sistema.
+ */
 @Service
 public class PeliculaService {
 
