@@ -62,7 +62,7 @@ public class PeliculaService {
         return peliculaRepository.findById( id ).get();
     }
     /**
-     * Esta función actualiza una pelica de la base de datos por su identificador único
+     * Esta función actualiza una película de la base de datos por su identificador único
      * @param pelicula Es el objeto película a ser actualizado. Debe contener toda la
      * información necesaria de película como título, duración, clasificación, etc.
      * @return El objeto película ya actualizado con ayuda de su único identificador.

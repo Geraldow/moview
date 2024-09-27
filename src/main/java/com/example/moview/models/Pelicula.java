@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
+
 @SuppressWarnings("serial")
 @Table(name = "pelicula")
 @NamedQueries({

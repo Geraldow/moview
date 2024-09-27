@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * <strong>Repositorio de Películas</strong>
- *
+ * <br>
  * Esta interfaz define los métodos CRUD (Create, Read, Update, Delete) básicos para
  * realizar operaciones con las películas en la base de datos. Spring Data JPA proporciona
  * una implementación automática de estos métodos a partir de la definición de la entidad
