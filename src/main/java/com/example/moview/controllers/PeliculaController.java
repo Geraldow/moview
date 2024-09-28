@@ -130,5 +130,4 @@ public class PeliculaController {
         peliculaService.eliminarPeliculaPorId(id);
         return "redirect:/peliculas/lista";
     }
-
 }
