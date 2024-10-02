@@ -7,6 +7,9 @@ module.exports = {
           primaryColor: '#FEF3F2',
           secondaryColor: '#314852',
         },
+      fontFamily: {
+        Overlock: ['Overlock', 'sans-serif']
+      }
     },
   },
   plugins: [] ,

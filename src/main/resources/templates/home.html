@@ -1,72 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        element-styles {
-   display: inline-block;
-   width: 1440px;
-}
-        .header-navbar {
-   box-sizing: border-box;
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-   justify-content: center;
-   min-width: 1440px;
-   height: 72px;
-   padding-left: 704px;
-   background: #fef3f2;
-}
-        .flex-center-row-with-spacing {
-   display: flex;
-   flex: 0 0 auto;
-   flex-direction: row;
-   gap: 30px;
-   align-items: center;
-   justify-content: center;
-}
-        .primary-navigation-link {
-   flex: 0 0 auto;
-   padding: 0;
-   margin: 0;
-   font: 400 16px Roboto, sans-serif;
-   color: black;
-}
-        .svg-container {
-   display: flex;
-   flex: 0 0 auto;
-   width: 24px;
-   height: 24px;
-   margin-left: 3px;
-   color: #111111;
-}
-    </style>
+    <title>Moview</title>
+    <!-- Icons Aplication -->
+    <script src="https://kit.fontawesome.com/126fa838b4.js" crossorigin="anonymous"></script>
+    <!-- Fuentes de Textos -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overlock:wght@400;700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700" />
+    <link th:href="@{/main.css}" rel="stylesheet" />
 </head>
-    <body>
-        <div style="display: inline-block; width: 1440px" data-ignore="used only for top most containter width">
-            <div class="header-navbar">
-                <div class="flex-center-row-with-spacing">
-                    <p class="primary-navigation-link"><a href="">Inicio</a></p>
-                    <p class="primary-navigation-link"><a href="">Películas</a></p>
-                    <p class="primary-navigation-link"><a href="">Horarios</a></p>
-                    <p class="primary-navigation-link"><a href="">Servicios</a></p>
+<body class="bg-primaryColor">
+    <!-- BANNER -->
+    <div>
+        <!-- HEADER SECTION -->
+        <header class="h-16 w-full bg-primaryColor absolute">
+            <div class="flex justify-between items-center mx-5 lg:mx-[40px]">
+                <div class="">
+                    <a href="#">
+                        <img th:src="@{/images/logo_black.png}" class="min-h-14 max-h-14" alt="Logo Empresa">
+                    </a>
                 </div>
-                <div class="svg-container">
-                    <svg viewBox="0 0 24 24" x="0" y="0" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g id="Chevron Down_2" data-node-id="I137:2208;2:350" xmlns="http://www.w3.org/2000/svg">
-                            <path id="Vector_28" data-node-id="I137:2208;2:367" fill-rule="evenodd" clip-rule="evenodd" d="M12.45,15.665c-0.22,0.2197 -0.58,0.2197 -0.8,0l-5.73,-5.7351c-0.22,-0.2197 -0.22,-0.5758 0,-0.7955l0.26,-0.2652c0.22,-0.2197 0.58,-0.2197 0.8,0l5.07,5.0722l5.07,-5.0722c0.22,-0.2197 0.58,-0.2197 0.8,0l0.26,0.2652c0.22,0.2197 0.22,0.5758 0,0.7955z" fill="currentColor" />
-                        </g>
-                    </svg>
+                <div class="flex px-6 py-3 space-x-9 items-center">
+                    <a href="#">Inicio</a>
+                    <a href="#">Películas</a>
+                    <a href="#">Horarios</a>        
+                    <select name="Servicios" id="linkServices" class="bg-transparent">                
+                        <option value="#" class="bg-primaryColor text-black">Servicios</option>
+                        <option value="#" class="bg-primaryColor text-black">Confitería</option>
+                        <option value="#" class="bg-primaryColor text-black">Promociones</option>
+                        <option value="#" class="bg-primaryColor text-black">Contácto</option>
+                    </select>
+                    <button class="border-2 border-black hover:bg-secondaryColor hover:text-white px-3 py-1">Iniciar</button>
+                    <button class="border-2 border-black bg-secondaryColor hover:bg-green-950 px-3 py-1 text-white">Registrarse</button>
                 </div>
             </div>
-        </div>
-
-
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overlock:wght@400;700" />
-
-
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700" />
-    </body>
+        </header>
+        <!-- TEXT BANNER -->
+        <section>
+            <div class="bg-secondaryColor h-screen flex justify-center">         
+                <div class="items-center justify-center flex flex-col space-y-10 font-Overlock mx-12 xl:mx-0">
+                    <div class="#">
+                        <h1 class="text-center text-white text-4xl sm:text-5xl md:text-6xl xl:text-7xl">¡Bienvenidos al mejor Cine Drive-In <br> de la Ciudad!</h1>
+                    </div>
+                    <div>
+                        <p class="text-center text-white text-lg sm:text-xl xl:text-2xl">Disfruta de una experiencia única bajo las estrellas con nuestras peliculas de <br>
+                        estreno y deliciosos snacks.</p>
+                    </div>
+                    <div class="space-x-2">
+                        <button class="border-2 border-gray-200 bg-gray-200 px-3 py-1 text-black font-semibold text-lg xl:text-xl hover:bg-white">Explorar</button>
+                        <button class="border-2 border-white bg-secondaryColor px-3 py-1 text-white font-semibold text-lg xl:text-xl hover:bg-white hover:text-black">Registrarse</button>
+                    </div>
+                </div>                         
+            </div>
+        </section>
+        <!-- WELCOME SECTION -->
+        <section>
+            <div class="w-auto h-auto flex flex-col justify-center font-Overlock space-y-20 my-20 mx-8 lg:m-24">
+                <div class="items-center justify-center space-y-6">
+                    <h2 class="text-center text-black text-4xl md:text-5xl xl:text-6xl font-bold">Bienvenidos al Autocine</h2>
+                    <p class="text-center text-black text-lg sm:text-xl xl:text-2xl">Disfruta de una experiencia única en nuestro autocine, donde la diversión está garantizada</p>
+                </div>
+                <div class="space-y-20">
+                    <div>
+                        <h2 class="text-black font-bold text-2xl md:text-3xl xl:text-4xl">Calidad de Imagen y Sonido excepcionales para una <br>experiencia inmersiva</h2>
+                    </div>
+                    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-14 xl:gap-10">
+                        <div class="space-y-3 xl:space-y-6">
+                            <img th:src="@{/images/home/img-featured-1.png}" alt="">
+                            <h4 class="text-2xl font-bold">Comodidad en tu coche con amplios espacios y asientos reclinables</h4>
+                            <p class="font-semibold">Disfruta de una amplia variedad de películas de todos los géneros</p>
+                           <div class="font-extrabold"><a href="#">Ver más ></a></div>
+                        </div>
+                        <div class="space-y-3 xl:space-y-6">
+                            <img th:src="@{/images/home/img-featured-2.png}" alt="">
+                            <h4 class="text-2xl font-bold flex-1">Concesionario de confitería con deliciosos snacks y diversas bebidas</h4>
+                            <p class="font-semibold">Disfruta de tus películas favoritas mientras saboreas tus antojos</p>
+                           <div class="font-extrabold"><a href="#">Ver más ></a></div>
+                        </div>
+                        <div class="space-y-3 xl:space-y-6">
+                            <img th:src="@{/images/home/img-featured-3.png}" alt="">
+                            <h4 class="text-2xl font-bold">Tenemos una amplia selección de películas para todos los gustos y edades</h4>
+                            <p class="font-semibold">Desde clásicos hasta los últimos estrenos, tenemos todo para ti</p>
+                            <div class="font-extrabold"><a href="#">Ver más ></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
 </html>
