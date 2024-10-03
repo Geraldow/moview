@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confitería</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/126fa838b4.js" crossorigin="anonymous"></script>
+    <link href="../static/main.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            background-color: #1f2937;
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            right: 0;
+            top: 0;
+            padding-top: 20px;
+            z-index: 1000;
+        }
+
+        .sidebar a {
+            padding: 15px 25px;
+            text-align: left;
+            display: block;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            background-color: #374151;
+            margin: 10px 0;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #4b5563;
+        }
+
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #34D399;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .floating-button:hover {
+            background-color: #10B981;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .sidebar {
+                display: none;
+            }
+            .floating-button {
+                right: calc(50% - 25px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- BARRA DE MENÚ -->
+    <nav class="bg-gray-800">
+        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="ruta/a/tu/logo.png" alt="Logo" class="h-8 mr-4">
+                <button class="text-white mr-4">
+                    <i class="fa-solid fa-bell"></i>
+                </button>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="text-white hover:text-gray-300">Inicio</a>
+                <a href="#" class="text-white hover:text-gray-300">Películas</a>
+                <a href="#" class="text-white hover:text-gray-300">Horarios</a>
+                <a href="#" class="text-white hover:text-gray-300">Servicios</a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="text-white hover:text-gray-300">Ingresar</a>
+                <a href="#" class="text-white hover:text-gray-300">Registrarse</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container mx-auto py-12">
+        <h2 class="text-3xl font-bold text-center mb-8">Nuestra Oferta</h2>
+    
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <img src="https://via.placeholder.com/150" alt="Mega Combin-Vasogig" class="mx-auto mb-4">
+                <h3 class="text-xl font-bold">Mega Combin-Vasogig</h3>
+                <p>1 Vaso Gigante Recargable + 1 Canchita Grande Salada - Stock Limitado</p>
+                <span class="text-2xl font-bold">S/ 49.90</span>
+                <div class="flex justify-center mt-4">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">-</button>
+                    <span class="mx-4">0</span>
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">+</button>
+                </div>
+            </div>
+    
+            <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                </div>
+        </div>
+    </section>
+
+    <!--INICIO DEL FOOTER-->
+    
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+            <!-- Columna Uno -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Columna Uno</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-teal-400">Enlace Uno</a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace Dos</a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace Tres</a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace Cuatro</a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace Cinco</a></li>
+                </ul>
+            </div>
+            <!-- Columna Dos -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Columna Dos</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-teal-400">Enlace Seis</a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace Siete</a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace Ocho</a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace Nueve</a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace Diez</a></li>
+                </ul>
+            </div>
+            <!-- Columna Tres -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Columna Tres</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-teal-400">Enlace Once</a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace Doce</a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace Trece</a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace Catorce</a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace Quince</a></li>
+                </ul>
+            </div>
+            <!-- Columna Suscribir -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Suscribir</h4>
+                <p class="text-sm mb-4">Únete a nuestro boletín para estar al día de las novedades y lanzamientos.</p>
+                <form class="flex flex-col space-y-3">
+                    <input type="email" placeholder="Ingresa tu correo" class="px-4 py-2 bg-gray-700 text-white rounded">
+                    <button type="submit" class="px-4 py-2 bg-teal-500 hover:bg-teal-400 text-white rounded">Suscribirse</button>
+                </form>
+                <p class="text-xs mt-4">Al suscribirte, aceptas nuestra <a href="#" class="text-teal-400 hover:underline">Política de Privacidad</a>.</p>
+            </div>
+        </div>
+    
+        <!-- Footer Bottom -->
+        <div class="border-t border-gray-700 mt-10 pt-6">
+            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-sm">
+                <p class="text-gray-400">&copy; 2024 Moview. Todos los derechos reservados. 
+                    <a href="#" class="hover:underline ml-2">Política de Privacidad</a> | 
+                    <a href="#" class="hover:underline">Términos de Servicio</a> | 
+                    <a href="#" class="hover:underline">Configuración de Cookies</a>
+                </p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-teal-400"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-teal-400"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-teal-400"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-teal-400"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+</body>
+</html>
+
+
+
