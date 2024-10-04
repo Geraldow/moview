@@ -7,78 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/126fa838b4.js" crossorigin="anonymous"></script>
     <link href="../static/main.css" rel="stylesheet">
-    <style>
-        .sidebar {
-            background-color: #1f2937;
-            width: 250px;
-            height: 100vh;
-            position: fixed;
-            right: 0;
-            top: 0;
-            padding-top: 20px;
-            z-index: 1000;
-        }
-
-        .sidebar a {
-            padding: 15px 25px;
-            text-align: left;
-            display: block;
-            color: white;
-            font-weight: bold;
-            border-radius: 8px;
-            background-color: #374151;
-            margin: 10px 0;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .sidebar a:hover {
-            background-color: #4b5563;
-        }
-
-        .floating-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #34D399;
-            color: white;
-            padding: 15px;
-            border-radius: 50%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            font-size: 24px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .floating-button:hover {
-            background-color: #10B981;
-        }
-
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .sidebar {
-                display: none;
-            }
-            .floating-button {
-                right: calc(50% - 25px);
-            }
-        }
-    </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-[#FEF3F2]">
 
     <!-- BARRA DE MENÚ -->
-    <nav class="bg-gray-800">
+    <nav class="bg-[#314852]">
         <div class="container mx-auto px-4 py-2 flex justify-between items-center">
             <div class="flex items-center">
-                <img src="ruta/a/tu/logo.png" alt="Logo" class="h-8 mr-4">
+                <img src="./images/usuario.png" alt="Logo" class="h-8 mr-4">
                 <button class="text-white mr-4">
                     <i class="fa-solid fa-bell"></i>
                 </button>
@@ -96,66 +32,161 @@
         </div>
     </nav>
 
-    <section class="container mx-auto py-12">
+    <section class="container mx-auto py-6">
         <h2 class="text-3xl font-bold text-center mb-8">Nuestra Oferta</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+            <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <img src="./images/promocion1.png" alt="Mega Combin-Vasogig" class="mx-auto mb-4">
+                <h3 class="text-xl font-bold">¡Mega Combo diario!</h3>
+                <p>1 Gaseosa Coca Cola de 300ml + 1 Canchita Grande Salada - Stock Limitado</p>
+                <span class="text-2xl font-bold">S/ 13.90</span>
+                <div class="flex justify-center mt-4">
+                    <button class="bg-[#314852] hover:bg-[#314852] text-white font-bold py-2 px-4 rounded">-</button>
+                    <span class="mx-4">0</span>
+                    <button class="bg-[#314852] hover:bg-[#314852] text-white font-bold py-2 px-4 rounded">+</button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <img src="./images/promocion2.png" alt="Mega Combin-Vasogig" class="mx-auto mb-4">
+                <h3 class="text-xl font-bold">¡Mega Combo unico!</h3>
+                <p>1 Gaseosa Coca Cola de 300ml + 1 caja de nachos con queso - Stock Limitado</p>
+                <span class="text-2xl font-bold">S/ 17.90</span>
+                <div class="flex justify-center mt-4">
+                    <button class="bg-[#314852] hover:bg-[#314852] text-white font-bold py-2 px-4 rounded">-</button>
+                    <span class="mx-4">0</span>
+                    <button class="bg-[#314852] hover:bg-[#314852] text-white font-bold py-2 px-4 rounded">+</button>
+                </div>
+            </div>
+        </div> 
+    </section>
     
+
+    <section class="container mx-auto py-12">
+        
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="https://via.placeholder.com/150" alt="Mega Combin-Vasogig" class="mx-auto mb-4">
-                <h3 class="text-xl font-bold">Mega Combin-Vasogig</h3>
-                <p>1 Vaso Gigante Recargable + 1 Canchita Grande Salada - Stock Limitado</p>
-                <span class="text-2xl font-bold">S/ 49.90</span>
+                <img src="./images/cocacola.png" alt="Mega Combin-Vasogig" class="mx-auto mb-4">
+                <h3 class="text-xl font-bold">Coca cola 300ml</h3>
+                <span class="text-2xl font-bold">S/ 4.90</span>
                 <div class="flex justify-center mt-4">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">-</button>
+                    <button class="bg-[#314852] hover:bg-[#314852] text-white font-bold py-2 px-4 rounded">-</button>
                     <span class="mx-4">0</span>
-                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">+</button>
+                    <button class="bg-[#314852] hover:bg-[#314852] text-white font-bold py-2 px-4 rounded">+</button>
                 </div>
             </div>
     
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <img src="./images/popcorn.png" alt="Mega Combin-Vasogig" class="mx-auto mb-4">
+                <h3 class="text-xl font-bold">Canchita grande salada</h3>
+                <span class="text-2xl font-bold">S/ 9.90</span>
+                <div class="flex justify-center mt-4">
+                    <button class="bg-[#314852] hover:bg-[#314852] text-white font-bold py-2 px-4 rounded">-</button>
+                    <span class="mx-4">0</span>
+                    <button class="bg-[#314852] hover:bg-[#314852] text-white font-bold py-2 px-4 rounded">+</button>
+                </div>
                 </div>
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <img src="./images/hotdog.png" alt="Mega Combin-Vasogig" class="mx-auto mb-4">
+                <h3 class="text-xl font-bold">Hot Dog</h3>
+                <span class="text-2xl font-bold">S/ 7.90</span>
+                <div class="flex justify-center mt-4">
+                    <button class="bg-[#314852] hover:bg-[#314852] text-white font-bold py-2 px-4 rounded">-</button>
+                    <span class="mx-4">0</span>
+                    <button class="bg-[#314852] hover:bg-[#314852] text-white font-bold py-2 px-4 rounded">+</button>
+                </div>
                 </div>
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <img src="./images/nachos.png" alt="Mega Combin-Vasogig" class="mx-auto mb-4">
+                <h3 class="text-xl font-bold">Nachos con queso</h3>
+                <span class="text-2xl font-bold">S/ 14.90</span>
+                <div class="flex justify-center mt-4">
+                    <button class="bg-[#314852] hover:bg-[#314852] text-white font-bold py-2 px-4 rounded">-</button>
+                    <span class="mx-4">0</span>
+                    <button class="bg-[#314852] hover:bg-[#314852] text-white font-bold py-2 px-4 rounded">+</button>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto py-12">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <img src="./images/agua.png" alt="Mega Combin-Vasogig" class="mx-auto mb-4">
+                <h3 class="text-xl font-bold">Agua San Mateo250ml</h3>
+                <span class="text-2xl font-bold">S/ 3.90</span>
+                <div class="flex justify-center mt-4">
+                    <button class="bg-[#314852] hover:bg-[#314852] text-white font-bold py-2 px-4 rounded">-</button>
+                    <span class="mx-4">0</span>
+                    <button class="bg-[#314852] hover:bg-[#314852] text-white font-bold py-2 px-4 rounded">+</button>
+                </div>
+            </div>
+    
+            <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <br><br><br><br>
+                <img src="./images/mym.png" alt="Mega Combin-Vasogig" class="mx-auto mb-4">
+                <h3 class="text-xl font-bold">MyM</h3>
+                <span class="text-2xl font-bold">S/ 6.90</span>
+                <div class="flex justify-center mt-4">
+                    <button class="bg-[#314852] hover:bg-[#314852] text-white font-bold py-2 px-4 rounded">-</button>
+                    <span class="mx-4">0</span>
+                    <button class="bg-[#314852] hover:bg-[#314852] text-white font-bold py-2 px-4 rounded">+</button>
+                </div>
+                </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <img src="./images/popcorn_dulce.png" alt="Mega Combin-Vasogig" class="mx-auto mb-4">
+                <h3 class="text-xl font-bold">Canchita grande dulce</h3>
+                <br>
+                <span class="text-2xl font-bold">S/ 9.90</span>
+                <div class="flex justify-center mt-4">
+                    <button class="bg-[#314852] hover:bg-[#314852] text-white font-bold py-2 px-4 rounded">-</button>
+                    <span class="mx-4">0</span>
+                    <button class="bg-[#314852] hover:bg-[#314852] text-white font-bold py-2 px-4 rounded">+</button>
+                </div>
+                </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <img src="./images/miflaka.png" alt="Mega Combin-Vasogig" class="mx-auto mb-4">
+                <h3 class="text-xl font-bold">Red Bull</h3>
+                <span class="text-2xl font-bold">S/ 9.90</span>
+                <div class="flex justify-center mt-4">
+                    <button class="bg-[#314852] hover:bg-[#314852] text-white font-bold py-2 px-4 rounded">-</button>
+                    <span class="mx-4">0</span>
+                    <button class="bg-[#314852] hover:bg-[#314852] text-white font-bold py-2 px-4 rounded">+</button>
+                </div>
                 </div>
         </div>
     </section>
 
     <!--INICIO DEL FOOTER-->
     
-    <footer class="bg-gray-800 text-white py-10">
+    <footer class="bg-[#314852] text-white py-10">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
             <!-- Columna Uno -->
             <div>
-                <h4 class="text-lg font-semibold mb-4">Columna Uno</h4>
-                <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-teal-400">Enlace Uno</a></li>
-                    <li><a href="#" class="hover:text-teal-400">Enlace Dos</a></li>
-                    <li><a href="#" class="hover:text-teal-400">Enlace Tres</a></li>
-                    <li><a href="#" class="hover:text-teal-400">Enlace Cuatro</a></li>
-                    <li><a href="#" class="hover:text-teal-400">Enlace Cinco</a></li>
-                </ul>
+                <img src="./images/logo.png" alt="">
             </div>
             <!-- Columna Dos -->
             <div>
-                <h4 class="text-lg font-semibold mb-4">Columna Dos</h4>
+                <h4 class="text-lg font-semibold mb-4">Columna Uno</h4>
                 <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-teal-400">Enlace Seis</a></li>
-                    <li><a href="#" class="hover:text-teal-400">Enlace Siete</a></li>
-                    <li><a href="#" class="hover:text-teal-400">Enlace Ocho</a></li>
-                    <li><a href="#" class="hover:text-teal-400">Enlace Nueve</a></li>
-                    <li><a href="#" class="hover:text-teal-400">Enlace Diez</a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace </a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace </a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace </a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace </a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace </a></li>
                 </ul>
             </div>
             <!-- Columna Tres -->
             <div>
-                <h4 class="text-lg font-semibold mb-4">Columna Tres</h4>
+                <h4 class="text-lg font-semibold mb-4">Columna Dos</h4>
                 <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-teal-400">Enlace Once</a></li>
-                    <li><a href="#" class="hover:text-teal-400">Enlace Doce</a></li>
-                    <li><a href="#" class="hover:text-teal-400">Enlace Trece</a></li>
-                    <li><a href="#" class="hover:text-teal-400">Enlace Catorce</a></li>
-                    <li><a href="#" class="hover:text-teal-400">Enlace Quince</a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace </a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace </a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace </a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace </a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace </a></li>
                 </ul>
             </div>
             <!-- Columna Suscribir -->
