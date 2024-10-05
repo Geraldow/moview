@@ -1,5 +1,6 @@
 package com.example.moview.service;
 
+import com.example.moview.generic.GenericCrud;
 import com.example.moview.models.Pelicula;
 import com.example.moview.repository.PeliculaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +23,10 @@ import java.util.List;
  *   `@Service` para encontrar los métodos que implementan las funcionalidades del sistema.
  */
 @Service
-public class PeliculaService {
+public class PeliculaService implements GenericCrud<Pelicula, Integer> {
 
     @Autowired
-    private PeliculaRepository peliculaRepository;
+    private PeliculaRepository repository;
     /**
      * Esta función crea una nueva película en la base de datos.
      *
@@ -35,8 +36,12 @@ public class PeliculaService {
      */
 
     // ==== Function to create a movie (CREATE) ==== //
-    public Pelicula crearPelicula( Pelicula pelicula ){
-        return peliculaRepository.save( pelicula );
+//    public Pelicula crearPelicula( Pelicula pelicula ){
+//        return peliculaRepository.save( pelicula );
+//    }
+    @Override
+    public Pelicula createObject(Pelicula pelicula) {
+        return repository.save(pelicula);
     }
 
     /**
@@ -46,8 +51,12 @@ public class PeliculaService {
      *
      */
     // ==== Function to get all movies (READ) ==== //
-        public List<Pelicula> buscarPeliculas() {
-        return( List<Pelicula> ) peliculaRepository.findAll();
+//        public List<Pelicula> buscarPeliculas() {
+//        return peliculaRepository.findAll();
+//    }
+    @Override
+    public List<Pelicula> searchAllObjects() {
+        return repository.findAll();
     }
 
     /**
@@ -58,8 +67,12 @@ public class PeliculaService {
      */
 
     // ==== Function to get a movie by id(READ) ==== //
-    public Pelicula buscarPeliculaPorId( Integer id ) {
-        return peliculaRepository.findById( id ).get();
+//    public Pelicula buscarPeliculaPorId( Integer id ) {
+//        return peliculaRepository.findById( id ).get();
+//    }
+    @Override
+    public Pelicula searchObjectById(Integer id) {
+        return repository.findById(id).get();
     }
     /**
      * Esta función actualiza una película de la base de datos por su identificador único
@@ -84,21 +97,39 @@ public class PeliculaService {
      * </ol>
      */
     // ==== Function to update a movie by id (UPDATE) ==== //
-    public Pelicula actualizarPelicula ( Pelicula pelicula ){
-        Pelicula peliculaSeleccionada = peliculaRepository.findById(pelicula.getId()).get();
+//    public Pelicula actualizarPelicula ( Pelicula pelicula ){
+//        Pelicula peliculaSeleccionada = peliculaRepository.findById(pelicula.getId()).get();
+//
+//        peliculaSeleccionada.setId(peliculaSeleccionada.getId());
+//        peliculaSeleccionada.setTitulo(pelicula.getTitulo());
+//        peliculaSeleccionada.setDuracion(pelicula.getDuracion());
+//        peliculaSeleccionada.setClasificacion(pelicula.getClasificacion());
+//        peliculaSeleccionada.setIdioma(pelicula.getIdioma());
+//        peliculaSeleccionada.setCategoria(pelicula.getCategoria());
+//        peliculaSeleccionada.setFormato(pelicula.getFormato());
+//        peliculaSeleccionada.setTrama(pelicula.getTrama());
+//        peliculaSeleccionada.setDirector(pelicula.getDirector());
+//
+//        Pelicula peliculaActualizada = peliculaRepository.save(pelicula);
+//        return peliculaActualizada;
+//    }
+    @Override
+    public Pelicula updateObject(Pelicula updateMovie) {
 
-        peliculaSeleccionada.setId(peliculaSeleccionada.getId());
-        peliculaSeleccionada.setTitulo(pelicula.getTitulo());
-        peliculaSeleccionada.setDuracion(pelicula.getDuracion());
-        peliculaSeleccionada.setClasificacion(pelicula.getClasificacion());
-        peliculaSeleccionada.setIdioma(pelicula.getIdioma());
-        peliculaSeleccionada.setCategoria(pelicula.getCategoria());
-        peliculaSeleccionada.setFormato(pelicula.getFormato());
-        peliculaSeleccionada.setTrama(pelicula.getTrama());
-        peliculaSeleccionada.setDirector(pelicula.getDirector());
+        Pelicula existingMovie = repository.findById(updateMovie.getId()).get();
 
-        Pelicula peliculaActualizada = peliculaRepository.save(pelicula);
-        return peliculaActualizada;
+        existingMovie.setId(existingMovie.getId());
+        existingMovie.setTitulo(existingMovie.getTitulo());
+        existingMovie.setDuracion(existingMovie.getDuracion());
+        existingMovie.setClasificacion(existingMovie.getClasificacion());
+        existingMovie.setIdioma(existingMovie.getIdioma());
+        existingMovie.setCategoria(existingMovie.getCategoria());
+        existingMovie.setFormato(existingMovie.getFormato());
+        existingMovie.setTrama(existingMovie.getTrama());
+        existingMovie.setDirector(existingMovie.getDirector());
+
+        Pelicula updatedMovie = repository.save(updateMovie);
+        return updatedMovie;
     }
 
     /**
@@ -108,7 +139,11 @@ public class PeliculaService {
      *
      */
     // ==== Function to delete a movie by id (DELETE) ==== //
-    public void eliminarPeliculaPorId( Integer id ){
-        peliculaRepository.deleteById(id);
+//    public void eliminarPeliculaPorId( Integer id ){
+//        repository.deleteById(id);
+//    }
+    @Override
+    public void deleteObjectById(Integer id) {
+        repository.deleteById(id);
     }
 }
