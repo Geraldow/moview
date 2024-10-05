@@ -86,7 +86,7 @@ public class PeliculaServiceTest {
          * con la {@link PeliculaService#actualizarPelicula(Pelicula)}.
          * Se espera que el método actualice la película existente en el repositorio.
          */
-        Pelicula result = peliculaService.crearPelicula(peliculaActualizada);
+        Pelicula result = peliculaService.createObject(peliculaActualizada);
 
         // === Then === //
         /*
