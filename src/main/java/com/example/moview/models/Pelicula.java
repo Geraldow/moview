@@ -16,6 +16,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "pelicula")
 @NamedQueries({
         @NamedQuery(name = "Pelicula.findAll", query = "SELECT p FROM Pelicula p"),
+        @NamedQuery(name = "Pelicula.findById", query = "SELECT p FROM Pelicula p WHERE p.id = :id"),
         @NamedQuery(name = "Pelicula.findByTitulo", query = "SELECT p FROM Pelicula p WHERE p.titulo = :titulo"),
         @NamedQuery(name = "Pelicula.findByDuracion", query = "SELECT p FROM Pelicula p WHERE p.duracion = :duracion"),
         @NamedQuery(name = "Pelicula.findByClasificacion", query = "SELECT p FROM Pelicula p WHERE p.clasificacion = :clasificacion"),
