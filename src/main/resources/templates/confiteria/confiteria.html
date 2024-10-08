@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/126fa838b4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overlock:wght@400;700" />
-    <link href="../static/main.css" rel="stylesheet">
+    <link href="/src/main/frontend/style.css" rel="stylesheet">
 </head>
 <body class="bg-[#FEF3F2]">
     
@@ -55,10 +55,9 @@
                         Servicios
                         <i class="fa-solid fa-chevron-down ml-1"></i>
                     </button>
-                    <div id="servicesDropdownMobile" class="hidden absolute bg-primaryColor shadow-lg mt-2 w-full">
-                        <a href="#" class="block w-auto px-4 py-2 text-black hover:bg-white">Confitería</a>
-                        <a href="#" class="block w-auto px-4 py-2 text-black hover:bg-white">Promociones</a>
-                        <a href="#" class="block w-auto px-4 py-2 text-black hover:bg-white">Contácto</a>
+                    <div id="servicesDropdown" class="hidden absolute w-40 bg-white rounded-lg mt-2">
+                        <a href="./confiteria/confiteria.html" class="block px-6 py-3 text-black hover:bg-white border-b">Confitería</a>
+                        <a href="#" class="block px-6 py-3 text-black hover:bg-white">Contacto</a>
                     </div>
                 </div>
                 <button class="border-2 border-black hover:bg-white hover:text-black px-3 py-1">Iniciar</button>
