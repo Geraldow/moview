@@ -24,29 +24,61 @@
 <body class="bg-[#FEF3F2]">
 
     <!-- BARRA DE MENÚ -->
-    <nav class="bg-[#314852]">
-        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
-            <div class="flex items-center">
-                <img src="./images/usuario.png" alt="Logo" class="h-8 mr-4">
-                <button class="text-white mr-4">
-                    <i class="fa-solid fa-bell"></i>
+    <header class="h-16 w-full bg-[#314852]">
+        <div class="flex justify-between items-center mx-5 lg:mx-[40px]">
+            <div class="">
+                <a href="#">
+                    <img src="./images/logo.png" class="min-h-14 max-h-14" alt="Logo Empresa">
+                </a>
+            </div>
+            <div class="flex items-center">                
+                <button id="hamburger" class="text-slate-500 hover:text-black block lg:hidden p-3 mt-1">
+                    <i id="hamburgerIcon" class="fa-solid fa-bars text-2xl"></i>
                 </button>
-            </div>
-            <div class="hidden md:flex space-x-8">
-                <a href="confiteria.html" class="text-white hover:text-gray-300">Inicio</a>
-                <a href="#" class="text-white hover:text-gray-300">Películas</a>
-                <a href="#" class="text-white hover:text-gray-300">Horarios</a>
-                <a href="#" class="text-white hover:text-gray-300">Servicios</a>
-            </div>
-            <div class="hidden md:flex space-x-8">
-                <a href="#" class="text-white hover:text-gray-300">Ingresar</a>
-                <a href="#" class="text-white hover:text-gray-300">Registrarse</a>
+                <div id="menu" class="hidden lg:flex px-6 py-3 space-x-9 items-center text-white">
+                    <a href="#" class="#">Inicio</a>
+                    <a href="#" class="#">Películas</a>
+                    <a href="#" class="#">Horarios</a>
+                    <div class="relative">
+                        <button id="servicesMenuBtn" class="bg-transparent flex items-center">
+                            Servicios
+                            <i class="fa-solid fa-chevron-down ml-1"></i>
+                        </button>
+                        <div id="servicesDropdown" class="hidden absolute bg-primaryColor shadow-lg mt-2">
+                            <a href="./confiteria/confiteria.html" class="block px-4 py-2 text-black hover:bg-white">Confitería</a>
+                            <a href="#" class="block px-4 py-2 text-black hover:bg-white">Promociones</a>
+                            <a href="#" class="block px-4 py-2 text-black hover:bg-white">Contácto</a>
+                        </div>
+                    </div>
+                    <button class="border-2 border-black hover:bg-green-950 px-3 py-1">Iniciar</button>
+                    <button class="border-2 border-black bg-secondaryColor hover:bg-green-950 px-3 py-1 text-white">Registrarse</button>
+                </div>
             </div>
         </div>
-    </nav>
+        <!-- MENÚ DESPLEGABLE -->
+        <div id="dropdownMenu" class="hidden lg:hidden bg-primaryColor absolute w-full">
+            <div class="flex flex-col space-y-2 p-4">
+                <a href="#" class="hover:bg-white ring-black p-2 hover:border-black">Inicio</a>
+                <a href="#" class="hover:bg-white ring-black p-2 hover:border-black">Películas</a>
+                <a href="#" class="hover:bg-white ring-black p-2 hover:border-black">Horarios</a>
+                <div class="relative">
+                    <button id="servicesMenuBtnMobile" class="text-gray-7 bg-transparent flex items-center w-full justify-between p-2">
+                        Servicios
+                        <i class="fa-solid fa-chevron-down ml-1"></i>
+                    </button>
+                    <div id="servicesDropdown" class="hidden absolute w-40 bg-white rounded-lg mt-2">
+                        <a href="./confiteria/confiteria.html" class="block px-6 py-3 text-black hover:bg-white border-b">Confitería</a>
+                        <a href="#" class="block px-6 py-3 text-black hover:bg-white">Contacto</a>
+                    </div>
+                </div>
+                <button class="border-2 border-black hover:bg-white hover:text-black px-3 py-1">Iniciar</button>
+                <button class="border-2 border-black bg-secondaryColor hover:bg-green-950 px-3 py-1 text-white">Registrarse</button>
+            </div>
+        </div>
+    </header>
 
     <div class="container mx-auto py-6 bg-white shadow-lg rounded-lg p-8">
-        <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Tu Carrito</h2>
+        <h2 class="text-4xl font-bold text-gray-800 mb-8">Tu Carrito</h2>
         
         <!-- Productos del carrito -->
         <div id="cart-items" class="space-y-6 mb-6">
@@ -54,7 +86,7 @@
         </div>
     
         <!-- Precio total -->
-        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow-md">
+        <div class="flex justify-between bg-gray-100 p-4 rounded-lg shadow-md">
             <h3 class="text-2xl font-semibold text-gray-700">Total:</h3>
             <h3 id="total-price" class="text-3xl font-bold text-[#314852]">S/. 0.00</h3>
         </div>
@@ -77,15 +109,24 @@
         function loadCart() {
             const cartData = JSON.parse(localStorage.getItem('cart'));
             const cartItemsContainer = document.getElementById('cart-items');
+            
             if (cartData && Object.keys(cartData).length > 0) {
                 Object.keys(cartData).forEach(productId => {
                     const quantity = cartData[productId];
                     if (quantity > 0) {
                         const productDiv = document.createElement('div');
-                        productDiv.className = 'bg-white rounded-lg shadow-md p-6 text-center';
-                        productDiv.innerHTML = 
-                            `<h3 class="text-xl font-bold">${productId.replace(/_/g, ' ')}</h3>
-                            <p>Cantidad: <span id="${productId}-quantity">${quantity}</span></p>`;
+                        productDiv.className = 'bg-white rounded-lg shadow-md p-6 flex justify-between items-center'; // Cambiado a items-center para mejor alineación
+
+                        productDiv.innerHTML = `
+                            <div class="text-left">
+                                <h3 class="text-xl font-bold">${productId.replace(/_/g, ' ')}</h3>
+                                <p>Cantidad: <span id="${productId}-quantity">${quantity}</span></p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-xl font-semibold text-gray-800">S/. 99.99</p> <!-- Reemplaza con el precio correcto -->
+                            </div>
+                        `;
+
                         cartItemsContainer.appendChild(productDiv);
                     }
                 });
@@ -98,7 +139,6 @@
     </script>
 
     <!--INICIO DEL FOOTER-->
-    
     <footer class="bg-[#314852] text-white py-10 mt-auto">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
             <!-- Columna Uno -->
@@ -141,6 +181,7 @@
 
 </body>
 </html>
+
 
 
 
