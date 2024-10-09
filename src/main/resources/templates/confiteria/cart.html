@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/126fa838b4.js" crossorigin="anonymous"></script>
+    <link href="../static/main.css" rel="stylesheet">
+    <script src="cart.js" defer></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            flex: 1;
+        }
+    </style>
+</head>
+<body class="bg-[#FEF3F2]">
+
+    <!-- BARRA DE MENÚ -->
+    <nav class="bg-[#314852]">
+        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="./images/usuario.png" alt="Logo" class="h-8 mr-4">
+                <button class="text-white mr-4">
+                    <i class="fa-solid fa-bell"></i>
+                </button>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="confiteria.html" class="text-white hover:text-gray-300">Inicio</a>
+                <a href="#" class="text-white hover:text-gray-300">Películas</a>
+                <a href="#" class="text-white hover:text-gray-300">Horarios</a>
+                <a href="#" class="text-white hover:text-gray-300">Servicios</a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="text-white hover:text-gray-300">Ingresar</a>
+                <a href="#" class="text-white hover:text-gray-300">Registrarse</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto py-6 bg-white shadow-lg rounded-lg p-8">
+        <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Tu Carrito</h2>
+        
+        <!-- Productos del carrito -->
+        <div id="cart-items" class="space-y-6 mb-6">
+            <!-- Aquí se mostrarán los productos -->
+        </div>
+    
+        <!-- Precio total -->
+        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow-md">
+            <h3 class="text-2xl font-semibold text-gray-700">Total:</h3>
+            <h3 id="total-price" class="text-3xl font-bold text-[#314852]">S/. 0.00</h3>
+        </div>
+    
+        <!-- Botón de finalizar compra -->
+        <div class="text-right mt-6">
+            <button class="bg-gradient-to-r from-[#314852] to-[#1f2f38] hover:from-[#1f2f38] hover:to-[#16252e] text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105" onclick="checkout()">
+                Finalizar Compra
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function checkout() {
+            alert('Compra finalizada. ¡Gracias por tu compra!');
+            localStorage.removeItem('cart');
+            window.location.href = 'confiteria.html';
+        }
+
+        function loadCart() {
+            const cartData = JSON.parse(localStorage.getItem('cart'));
+            const cartItemsContainer = document.getElementById('cart-items');
+            if (cartData && Object.keys(cartData).length > 0) {
+                Object.keys(cartData).forEach(productId => {
+                    const quantity = cartData[productId];
+                    if (quantity > 0) {
+                        const productDiv = document.createElement('div');
+                        productDiv.className = 'bg-white rounded-lg shadow-md p-6 text-center';
+                        productDiv.innerHTML = 
+                            `<h3 class="text-xl font-bold">${productId.replace(/_/g, ' ')}</h3>
+                            <p>Cantidad: <span id="${productId}-quantity">${quantity}</span></p>`;
+                        cartItemsContainer.appendChild(productDiv);
+                    }
+                });
+            } else {
+                cartItemsContainer.innerHTML = '<p class="text-center">No hay productos en el carrito.</p>';
+            }
+        }
+
+        window.onload = loadCart;
+    </script>
+
+    <!--INICIO DEL FOOTER-->
+    
+    <footer class="bg-[#314852] text-white py-10 mt-auto">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+            <!-- Columna Uno -->
+            <div>
+                <img src="./images/logo.png" alt="">
+            </div>
+            <!-- Columna Dos -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Columna Uno</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-teal-400">Enlace </a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace </a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace </a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace </a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace </a></li>
+                </ul>
+            </div>
+            <!-- Columna Tres -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Columna Dos</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-teal-400">Enlace </a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace </a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace </a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace </a></li>
+                    <li><a href="#" class="hover:text-teal-400">Enlace </a></li>
+                </ul>
+            </div>
+            <!-- Columna Suscribir -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Suscribir</h4>
+                <p class="text-sm mb-4">Únete a nuestro boletín para estar al día de las novedades y lanzamientos.</p>
+                <form class="flex flex-col space-y-3">
+                    <input type="email" placeholder="Ingresa tu correo" class="px-4 py-2 bg-gray-700 text-white rounded-lg">
+                    <button type="submit" class="bg-teal-400 text-white py-2 rounded-lg">Suscribir</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
+
