@@ -49,8 +49,8 @@
 <main>
     <section class="person-form mt-10 mb-10">
         <h2 class="text-center text-4xl text-white font-bold mb-4">Editar Película</h2>
-
-        <form action="#" th:action="@{/peliculas/guardar}" th:object="${pelicula}" method="post" class="max-w-md mx-auto formulario rounded-xl p-4 ">
+        <form th:action="@{/peliculas/guardar}" th:object="${pelicula}" method="post" class="max-w-md mx-auto formulario rounded-xl p-4 ">
+            <input type="hidden" th:field="*{id}">
             <div class="grid md:grid-cols-2 md:gap-6">
                 <div class="relative z-0 w-full mb-5 group">
                     <input type="text" id="titulo" class="block py-2.5 px-0 w-full text-sm text-white-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" th:field="*{titulo}" placeholder=" " required />

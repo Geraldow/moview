@@ -50,7 +50,7 @@ public class PeliculaController {
      *         En este caso, es "/peliculas/lista-peliculas".
      */
     // === Path for list movie === //
-    @GetMapping("/lista")
+    @GetMapping
     public String mostrarPeliculas(Model model){
 
         List<Pelicula> listaPeliculas = peliculaService.searchAllObjects();
@@ -91,7 +91,7 @@ public class PeliculaController {
     @PostMapping("/guardar")
     public String crearPelicula(@ModelAttribute("pelicula") Pelicula pelicula){
         peliculaService.createObject(pelicula);
-        return "redirect:/peliculas/lista";
+        return "redirect:/peliculas";
     }
 
     /**
@@ -128,6 +128,6 @@ public class PeliculaController {
     @GetMapping("eliminar/{id}")
     public String eliminarPelicula(@PathVariable (name = "id") int id){
         peliculaService.deleteObjectById(id);
-        return "redirect:/peliculas/lista";
+        return "redirect:/peliculas";
     }
 }

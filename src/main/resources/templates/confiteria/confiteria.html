@@ -19,7 +19,7 @@
         <div class="flex justify-between items-center mx-5 lg:mx-[40px]">
             <div class="">
                 <a href="#">
-                    <img src="./images/logo.png" class="min-h-14 max-h-14" alt="Logo Empresa">
+                    <img th:src="@{/images/confiteria/logo.png}" class="min-h-14 max-h-14" alt="Logo Empresa">
                 </a>
             </div>
             <div class="flex items-center">                
@@ -27,8 +27,8 @@
                     <i id="hamburgerIcon" class="fa-solid fa-bars text-2xl"></i>
                 </button>
                 <div id="menu" class="hidden lg:flex px-6 py-3 space-x-9 items-center text-white">
-                    <a href="#" class="#">Inicio</a>
-                    <a href="#" class="#">Películas</a>
+                    <a th:href="@{/}" class="#">Inicio</a>
+                    <a th:href="@{/peliculas}" class="#">Películas</a>
                     <a href="#" class="#">Horarios</a>
                     <div class="relative">
                         <button id="servicesMenuBtn" class="bg-transparent flex items-center">
@@ -36,7 +36,7 @@
                             <i class="fa-solid fa-chevron-down ml-1"></i> <!-- Icono de flecha hacia abajo -->
                         </button>
                         <div id="servicesDropdown" class="hidden absolute bg-primaryColor shadow-lg mt-2">
-                            <a href="./confiteria/confiteria.html" class="block px-4 py-2 text-black hover:bg-white">Confitería</a>
+                            <a th:href="@{/confiteria}" class="block px-4 py-2 text-black hover:bg-white">Confitería</a>
                             <a href="#" class="block px-4 py-2 text-black hover:bg-white">Promociones</a>
                             <a href="#" class="block px-4 py-2 text-black hover:bg-white">Contácto</a>
                         </div>
@@ -73,7 +73,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
             <!-- Producto: Mega Combo diario -->
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="./images/promocion1.png" alt="Mega Combo diario" class="mx-auto mb-4">
+                <img th:src="@{/images/confiteria/promocion1.png}" alt="Mega Combo diario" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">¡Mega Combo diario!</h3>
                 <p>1 Gaseosa Coca Cola de 300ml + 1 Canchita Grande Salada - Stock Limitado</p>
                 <span class="text-2xl font-bold">S/ 13.90</span>
@@ -85,7 +85,7 @@
             </div>
             <!-- Producto: Mega Combo único -->
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="./images/promocion2.png" alt="Mega Combo único" class="mx-auto mb-4">
+                <img th:src="@{/images/confiteria/promocion2.png}" alt="Mega Combo único" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">¡Mega Combo único!</h3>
                 <p>1 Gaseosa Coca Cola de 300ml + 1 caja de nachos con queso - Stock Limitado</p>
                 <span class="text-2xl font-bold">S/ 17.90</span>
@@ -101,7 +101,7 @@
     <section class="container mx-auto py-12">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="./images/cocacola.png" alt="Coca Cola 300ml" class="mx-auto mb-4">
+                <img th:src="@{/images/confiteria/cocacola.png}" alt="Coca Cola 300ml" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">Coca cola 300ml</h3>
                 <span class="text-2xl font-bold">S/ 4.90</span>
                 <div class="flex justify-center mt-4">
@@ -112,7 +112,7 @@
             </div>
     
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="./images/popcorn.png" alt="Canchita grande salada" class="mx-auto mb-4">
+                <img th:src="@{/images/confiteria/popcorn.png}" alt="Canchita grande salada" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">Canchita grande salada</h3>
                 <span class="text-2xl font-bold">S/ 9.90</span>
                 <div class="flex justify-center mt-4">
@@ -123,7 +123,7 @@
             </div>
     
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="./images/hotdog.png" alt="Hot Dog" class="mx-auto mb-4">
+                <img th:src="@{/images/confiteria/hotdog.png}" alt="Hot Dog" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">Hot Dog</h3>
                 <span class="text-2xl font-bold">S/ 7.90</span>
                 <div class="flex justify-center mt-4">
@@ -134,7 +134,7 @@
             </div>
     
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="./images/nachos.png" alt="Nachos con queso" class="mx-auto mb-4">
+                <img th:src="@{/images/confiteria/nachos.png}" alt="Nachos con queso" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">Nachos con queso</h3>
                 <span class="text-2xl font-bold">S/ 14.90</span>
                 <div class="flex justify-center mt-4">
@@ -149,7 +149,7 @@
     <section class="container mx-auto py-12">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="./images/agua.png" alt="Agua San Mateo 250ml" class="mx-auto mb-4">
+                <img th:src="@{/images/confiteria/agua.png}" alt="Agua San Mateo 250ml" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">Agua San Mateo 250ml</h3>
                 <span class="text-2xl font-bold">S/ 3.90</span>
                 <div class="flex justify-center mt-4">
@@ -160,7 +160,7 @@
             </div>
     
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="./images/mym.png" alt="MyM" class="mx-auto mb-4">
+                <img th:src="@{/images/confiteria/mym.png}" alt="MyM" class="mx-auto mb-4">
                 <br><br><br><br>
                 <h3 class="text-xl font-bold">MyM</h3>
                 <span class="text-2xl font-bold">S/ 6.90</span>
@@ -172,7 +172,7 @@
             </div>
     
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="./images/popcorn_dulce.png" alt="Canchita grande dulce" class="mx-auto mb-4">
+                <img th:src="@{/images/confiteria/popcorn_dulce.png}" alt="Canchita grande dulce" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">Canchita grande dulce</h3>
                 <span class="text-2xl font-bold">S/ 9.90</span>
                 <div class="flex justify-center mt-4">
@@ -183,7 +183,7 @@
             </div>
     
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="./images/miflaka.png" alt="Red Bull" class="mx-auto mb-4">
+                <img th:src="@{/images/confiteria/miflaka.png}" alt="Red Bull" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">Red Bull</h3>
                 <span class="text-2xl font-bold">S/ 9.90</span>
                 <div class="flex justify-center mt-4">
@@ -196,8 +196,10 @@
     </section>
 
     <div class="fixed bottom-5 right-5">
-        <button class="bg-[#314852] text-white py-2 px-4 rounded" onclick="window.location.href='cart.html'">
-            Ir al carrito (<span id="cart-count">0</span>)
+        <button class="bg-[#314852] text-white py-2 px-4 rounded">
+            <a th:href="@{/confiteria/carrito}">
+                Ir al carrito (<span id="cart-count">0</span>)
+            </a>
         </button>
     </div>
 
@@ -207,7 +209,7 @@
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
             <!-- Columna Uno -->
             <div>
-                <img src="./images/logo.png" alt="">
+                <img th:src="@{/images/confiteria/logo.png}" alt="">
             </div>
             <!-- Columna Dos -->
             <div>
@@ -261,7 +263,7 @@
         </div>
     </footer>
     
-    <script src="./cart.js"></script>
+    <script th:src="@{js/cart.js}"></script>
 </body>
 </html>
 
