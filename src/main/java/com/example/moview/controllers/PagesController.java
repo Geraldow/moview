@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class PagesController {
 
     // Rutas para todas las Páginas de Moview
-    @GetMapping("/Movies")
+    @GetMapping("/movies")
     public String mostrarMovies() {
         return "movies/movies";
     }
