@@ -2,22 +2,22 @@ package com.example.moview.generic;
 
 import java.util.List;
 
-public abstract class GenericCrud<T, ID>{
+public interface GenericCrud<T, ID>{
     // Implement CRUD operations here
     // For example:
 
     // Create
-    public abstract T createObject(T entity);
+    T createObject(T entity);
 
     // Read
-    public abstract T searchObjectById(ID id);
+    T searchObjectById(ID id);
 
     // Read all
-    public abstract List<T> searchAllObjects();
+    List<T> searchAllObjects();
 
     // Update
-    public abstract T updateObject(T entity);
+    T updateObject(T entity);
 
     // Delete
-    public abstract void deleteObjectById(ID id);
+    void deleteObjectById(ID id);
 }

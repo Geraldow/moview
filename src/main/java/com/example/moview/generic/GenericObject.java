@@ -5,7 +5,7 @@ import com.example.moview.repository.PeliculaRepository;
 
 import java.util.List;
 
-public class GenericObject extends GenericCrud<Pelicula, Integer> {
+public class GenericObject implements GenericCrud<Pelicula, Integer> {
 
     PeliculaRepository repository;
 

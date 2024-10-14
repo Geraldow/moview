@@ -1,72 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        element-styles {
-   display: inline-block;
-   width: 1440px;
-}
-        .header-navbar {
-   box-sizing: border-box;
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-   justify-content: center;
-   min-width: 1440px;
-   height: 72px;
-   padding-left: 704px;
-   background: #fef3f2;
-}
-        .flex-center-row-with-spacing {
-   display: flex;
-   flex: 0 0 auto;
-   flex-direction: row;
-   gap: 30px;
-   align-items: center;
-   justify-content: center;
-}
-        .primary-navigation-link {
-   flex: 0 0 auto;
-   padding: 0;
-   margin: 0;
-   font: 400 16px Roboto, sans-serif;
-   color: black;
-}
-        .svg-container {
-   display: flex;
-   flex: 0 0 auto;
-   width: 24px;
-   height: 24px;
-   margin-left: 3px;
-   color: #111111;
-}
-    </style>
-</head>
-    <body>
-        <div style="display: inline-block; width: 1440px" data-ignore="used only for top most containter width">
-            <div class="header-navbar">
-                <div class="flex-center-row-with-spacing">
-                    <p class="primary-navigation-link"><a href="">Inicio</a></p>
-                    <p class="primary-navigation-link"><a href="">Películas</a></p>
-                    <p class="primary-navigation-link"><a href="">Horarios</a></p>
-                    <p class="primary-navigation-link"><a href="">Servicios</a></p>
-                </div>
-                <div class="svg-container">
-                    <svg viewBox="0 0 24 24" x="0" y="0" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g id="Chevron Down_2" data-node-id="I137:2208;2:350" xmlns="http://www.w3.org/2000/svg">
-                            <path id="Vector_28" data-node-id="I137:2208;2:367" fill-rule="evenodd" clip-rule="evenodd" d="M12.45,15.665c-0.22,0.2197 -0.58,0.2197 -0.8,0l-5.73,-5.7351c-0.22,-0.2197 -0.22,-0.5758 0,-0.7955l0.26,-0.2652c0.22,-0.2197 0.58,-0.2197 0.8,0l5.07,5.0722l5.07,-5.0722c0.22,-0.2197 0.58,-0.2197 0.8,0l0.26,0.2652c0.22,0.2197 0.22,0.5758 0,0.7955z" fill="currentColor" />
-                        </g>
-                    </svg>
-                </div>
-            </div>
-        </div>
+<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml">
+<th:block th:replace="~{essentials/head :: head}"></th:block>
+<body class="bg-primaryColor">
 
+    <!-- HEADER SECTION -->
+    <header th:replace="~{essentials/header :: header}"></header>
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overlock:wght@400;700" />
+    <!-- TEXT BANNER -->
+    <section th:replace="~{essentials/home/banner :: banner}"></section>
 
+    <!-- DESTACADO MOVIEW -->
+    <section th:replace="~{essentials/home/highlighted :: highlighted}"></section>
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700" />
-    </body>
+    <!-- AUTO BANNER -->
+    <section th:replace="~{essentials/home/auto-banner :: auto-banner}"></section>
+
+    <!-- SECCIÓN STEPS TO BUY -->
+    <section th:replace="~{essentials/home/steps-to-buy :: steps-to-buy}"></section>
+
+    <!-- SECCIÓN SERVICIOS -->
+    <section th:replace="~{essentials/home/services :: services}"></section>
+
+    <!-- SECCIÓN ESTADÍSTICA -->
+    <section th:replace="~{essentials/home/statistics :: statistics}"></section>
+
+    <!-- SECCIÓN TESTIMONIOS -->
+    <section th:replace="~{essentials/home/testimonials :: testimonials}"></section>
+
+    <!-- SECCIÓN TICKETS -->
+    <section th:replace="~{essentials/home/tickets :: tickets}"></section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section th:replace="~{essentials/home/contact :: contact}"></section>
+
+    <!-- SUSCRIPCIÓN -->
+    <section th:replace="~{essentials/home/subscription :: subscription}"></section>
+
+    <!-- FOOTER -->
+    <footer th:replace="~{essentials/footer :: footer}"></footer>
+
+    <!-- DIRECTORIO JS -->
+    <script th:src="@{/js/general.js}"></script>
+</body>
 </html>

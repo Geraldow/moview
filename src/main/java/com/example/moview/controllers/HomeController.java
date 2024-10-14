@@ -3,6 +3,7 @@ package com.example.moview.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+
 /**
  * Este controlador maneja las solicitudes HTTP relacionadas con la página de inicio.
  */

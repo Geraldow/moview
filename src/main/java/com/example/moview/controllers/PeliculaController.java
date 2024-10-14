@@ -50,10 +50,10 @@ public class PeliculaController {
      *         En este caso, es "/peliculas/lista-peliculas".
      */
     // === Path for list movie === //
-    @GetMapping("/lista")
+    @GetMapping
     public String mostrarPeliculas(Model model){
 
-        List<Pelicula> listaPeliculas = peliculaService.buscarPeliculas();
+        List<Pelicula> listaPeliculas = peliculaService.searchAllObjects();
         model.addAttribute("listaPeliculas", listaPeliculas);
 
         return "/peliculas/lista-peliculas";
@@ -90,7 +90,7 @@ public class PeliculaController {
     // === Path for save a movie === //
     @PostMapping("/guardar")
     public String crearPelicula(@ModelAttribute("pelicula") Pelicula pelicula){
-        peliculaService.crearPelicula(pelicula);
+        peliculaService.createObject(pelicula);
         return "redirect:/peliculas/lista";
     }
 
@@ -106,15 +106,15 @@ public class PeliculaController {
      * @return Un objeto `ModelAndView` que contiene el nombre de la vista y los datos de la película.
      */
     // === Path for update a movie by id === //
-    @PutMapping("/actualizar/{id}")
+    @GetMapping("/actualizar/{id}")
     public ModelAndView editarPelicula (@PathVariable (name = "id") int id){
         ModelAndView modelAndView = new ModelAndView("/peliculas/editar-pelicula");
-        Pelicula pelicula = peliculaService.buscarPeliculaPorId(id);
+        Pelicula pelicula = peliculaService.searchObjectById(id);
         modelAndView.addObject("pelicula", pelicula);
         return modelAndView;
     }
 
-    /**
+      /**
      * <strong>@DeleteMapping</strong><br>
      * Elimina una película por su id.
      *
@@ -125,9 +125,9 @@ public class PeliculaController {
      * @return La URL a la que se redirige después de eliminar la película.
      */
     // === Path for delete a movie by id === //
-    @DeleteMapping("eliminar/{id}")
+    @GetMapping("eliminar/{id}")
     public String eliminarPelicula(@PathVariable (name = "id") int id){
-        peliculaService.eliminarPeliculaPorId(id);
+        peliculaService.deleteObjectById(id);
         return "redirect:/peliculas/lista";
     }
 }

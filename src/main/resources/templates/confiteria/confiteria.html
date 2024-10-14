@@ -8,38 +8,72 @@
     <script src="https://kit.fontawesome.com/126fa838b4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overlock:wght@400;700" />
     <link href="/src/main/frontend/style.css" rel="stylesheet">
+    <link th:href="@{/main.css}" rel="stylesheet" />
 </head>
 <body class="bg-[#FEF3F2]">
     
+    
 
     <!-- BARRA DE MENÚ -->
-    <nav class="bg-[#314852]">
-        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
-            <div class="flex items-center">
-                <img src="./images/usuario.png" alt="Logo" class="h-8 mr-4">
-                <button class="text-white mr-4">
-                    <i class="fa-solid fa-bell"></i>
+    <header class="h-16 w-full bg-[#314852]">
+        <div class="flex justify-between items-center mx-5 lg:mx-[40px]">
+            <div class="">
+                <a href="#">
+                    <img th:src="@{/images/confiteria/logo.png}" class="min-h-14 max-h-14" alt="Logo Empresa">
+                </a>
+            </div>
+            <div class="flex items-center">                
+                <button id="hamburger" class="text-slate-500 hover:text-black block lg:hidden p-3 mt-1">
+                    <i id="hamburgerIcon" class="fa-solid fa-bars text-2xl"></i>
                 </button>
-            </div>
-            <div class="hidden md:flex space-x-8">
-                <a href="#" class="text-white hover:text-gray-300">Inicio</a>
-                <a href="#" class="text-white hover:text-gray-300">Películas</a>
-                <a href="#" class="text-white hover:text-gray-300">Horarios</a>
-                <a href="#" class="text-white hover:text-gray-300">Servicios</a>
-            </div>
-            <div class="hidden md:flex space-x-8">
-                <a href="#" class="text-white hover:text-gray-300">Ingresar</a>
-                <a href="#" class="text-white hover:text-gray-300">Registrarse</a>
+                <div id="menu" class="hidden lg:flex px-6 py-3 space-x-9 items-center text-white">
+                    <a th:href="@{/}" class="#">Inicio</a>
+                    <a th:href="@{/peliculas}" class="#">Películas</a>
+                    <a href="#" class="#">Horarios</a>
+                    <div class="relative">
+                        <button id="servicesMenuBtn" class="bg-transparent flex items-center">
+                            Servicios
+                            <i class="fa-solid fa-chevron-down ml-1"></i> <!-- Icono de flecha hacia abajo -->
+                        </button>
+                        <div id="servicesDropdown" class="hidden absolute bg-primaryColor shadow-lg mt-2">
+                            <a th:href="@{/confiteria}" class="block px-4 py-2 text-black hover:bg-white">Confitería</a>
+                            <a href="#" class="block px-4 py-2 text-black hover:bg-white">Promociones</a>
+                            <a href="#" class="block px-4 py-2 text-black hover:bg-white">Contácto</a>
+                        </div>
+                    </div>
+                    <button class="border-2 border-black hover:bg-green-950 px-3 py-1">Iniciar</button>
+                    <button class="border-2 border-black bg-secondaryColor hover:bg-green-950 px-3 py-1 text-white">Registrarse</button>
+                </div>
             </div>
         </div>
-    </nav>
+        <!-- MENÚ DESPLEGABLE -->
+        <div id="dropdownMenu" class="hidden lg:hidden bg-primaryColor absolute w-full">
+            <div class="flex flex-col space-y-2 p-4">
+                <a href="#" class="hover:bg-white ring-black p-2 hover:border-black">Inicio</a>
+                <a href="#" class="hover:bg-white ring-black p-2 hover:border-black">Películas</a>
+                <a href="#" class="hover:bg-white ring-black p-2 hover:border-black">Horarios</a>
+                <div class="relative">
+                    <button id="servicesMenuBtnMobile" class="text-gray-7 bg-transparent flex items-center w-full justify-between p-2">
+                        Servicios
+                        <i class="fa-solid fa-chevron-down ml-1"></i>
+                    </button>
+                    <div id="servicesDropdown" class="hidden absolute w-40 bg-white rounded-lg mt-2">
+                        <a href="./confiteria/confiteria.html" class="block px-6 py-3 text-black hover:bg-white border-b">Confitería</a>
+                        <a href="#" class="block px-6 py-3 text-black hover:bg-white">Contacto</a>
+                    </div>
+                </div>
+                <button class="border-2 border-black hover:bg-white hover:text-black px-3 py-1">Iniciar</button>
+                <button class="border-2 border-black bg-secondaryColor hover:bg-green-950 px-3 py-1 text-white">Registrarse</button>
+            </div>
+        </div>
+    </header>
     
     <section class="container mx-auto py-6">
         <h2 class="text-3xl font-bold text-center mb-8">Nuestra Oferta</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
             <!-- Producto: Mega Combo diario -->
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="./images/promocion1.png" alt="Mega Combo diario" class="mx-auto mb-4">
+                <img th:src="@{/images/confiteria/promocion1.png}" alt="Mega Combo diario" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">¡Mega Combo diario!</h3>
                 <p>1 Gaseosa Coca Cola de 300ml + 1 Canchita Grande Salada - Stock Limitado</p>
                 <span class="text-2xl font-bold">S/ 13.90</span>
@@ -51,7 +85,7 @@
             </div>
             <!-- Producto: Mega Combo único -->
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="./images/promocion2.png" alt="Mega Combo único" class="mx-auto mb-4">
+                <img th:src="@{/images/confiteria/promocion2.png}" alt="Mega Combo único" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">¡Mega Combo único!</h3>
                 <p>1 Gaseosa Coca Cola de 300ml + 1 caja de nachos con queso - Stock Limitado</p>
                 <span class="text-2xl font-bold">S/ 17.90</span>
@@ -67,7 +101,7 @@
     <section class="container mx-auto py-12">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="./images/cocacola.png" alt="Coca Cola 300ml" class="mx-auto mb-4">
+                <img th:src="@{/images/confiteria/cocacola.png}" alt="Coca Cola 300ml" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">Coca cola 300ml</h3>
                 <span class="text-2xl font-bold">S/ 4.90</span>
                 <div class="flex justify-center mt-4">
@@ -78,7 +112,7 @@
             </div>
     
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="./images/popcorn.png" alt="Canchita grande salada" class="mx-auto mb-4">
+                <img th:src="@{/images/confiteria/popcorn.png}" alt="Canchita grande salada" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">Canchita grande salada</h3>
                 <span class="text-2xl font-bold">S/ 9.90</span>
                 <div class="flex justify-center mt-4">
@@ -89,7 +123,7 @@
             </div>
     
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="./images/hotdog.png" alt="Hot Dog" class="mx-auto mb-4">
+                <img th:src="@{/images/confiteria/hotdog.png}" alt="Hot Dog" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">Hot Dog</h3>
                 <span class="text-2xl font-bold">S/ 7.90</span>
                 <div class="flex justify-center mt-4">
@@ -100,7 +134,7 @@
             </div>
     
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="./images/nachos.png" alt="Nachos con queso" class="mx-auto mb-4">
+                <img th:src="@{/images/confiteria/nachos.png}" alt="Nachos con queso" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">Nachos con queso</h3>
                 <span class="text-2xl font-bold">S/ 14.90</span>
                 <div class="flex justify-center mt-4">
@@ -115,7 +149,7 @@
     <section class="container mx-auto py-12">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="./images/agua.png" alt="Agua San Mateo 250ml" class="mx-auto mb-4">
+                <img th:src="@{/images/confiteria/agua.png}" alt="Agua San Mateo 250ml" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">Agua San Mateo 250ml</h3>
                 <span class="text-2xl font-bold">S/ 3.90</span>
                 <div class="flex justify-center mt-4">
@@ -126,7 +160,7 @@
             </div>
     
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="./images/mym.png" alt="MyM" class="mx-auto mb-4">
+                <img th:src="@{/images/confiteria/mym.png}" alt="MyM" class="mx-auto mb-4">
                 <br><br><br><br>
                 <h3 class="text-xl font-bold">MyM</h3>
                 <span class="text-2xl font-bold">S/ 6.90</span>
@@ -138,7 +172,7 @@
             </div>
     
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="./images/popcorn_dulce.png" alt="Canchita grande dulce" class="mx-auto mb-4">
+                <img th:src="@{/images/confiteria/popcorn_dulce.png}" alt="Canchita grande dulce" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">Canchita grande dulce</h3>
                 <span class="text-2xl font-bold">S/ 9.90</span>
                 <div class="flex justify-center mt-4">
@@ -149,7 +183,7 @@
             </div>
     
             <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="./images/miflaka.png" alt="Red Bull" class="mx-auto mb-4">
+                <img th:src="@{/images/confiteria/miflaka.png}" alt="Red Bull" class="mx-auto mb-4">
                 <h3 class="text-xl font-bold">Red Bull</h3>
                 <span class="text-2xl font-bold">S/ 9.90</span>
                 <div class="flex justify-center mt-4">
@@ -162,8 +196,10 @@
     </section>
 
     <div class="fixed bottom-5 right-5">
-        <button class="bg-[#314852] text-white py-2 px-4 rounded" onclick="window.location.href='cart.html'">
-            Ir al carrito (<span id="cart-count">0</span>)
+        <button class="bg-[#314852] text-white py-2 px-4 rounded">
+            <a th:href="@{/confiteria/carrito}">
+                Ir al carrito (<span id="cart-count">0</span>)
+            </a>
         </button>
     </div>
 
@@ -173,7 +209,7 @@
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
             <!-- Columna Uno -->
             <div>
-                <img src="./images/logo.png" alt="">
+                <img th:src="@{/images/confiteria/logo.png}" alt="">
             </div>
             <!-- Columna Dos -->
             <div>
@@ -227,7 +263,7 @@
         </div>
     </footer>
     
-    <script src="./cart.js"></script>
+    <script th:src="@{js/cart.js}"></script>
 </body>
 </html>
 
