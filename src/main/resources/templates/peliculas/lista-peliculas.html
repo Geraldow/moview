@@ -45,9 +45,40 @@
     <link th:href="@{/main.css}" rel="stylesheet" />
 </head>
 <body>
+<!-- BARRA DE MENÚ -->
+<header class="h-16 w-full bg-[#314852]">
+    <div class="flex justify-between items-center mx-5 lg:mx-[40px]">
+        <div class="">
+            <a href="#">
+                <img th:src="@{/images/confiteria/logo.png}" class="min-h-14 max-h-14" alt="Logo Empresa">
+            </a>
+        </div>
+        <div class="flex items-center">
+            <button id="hamburger" class="text-slate-500 hover:text-black block lg:hidden p-3 mt-1">
+                <i id="hamburgerIcon" class="fa-solid fa-bars text-2xl"></i>
+            </button>
+            <div id="menu" class="hidden lg:flex px-6 py-3 space-x-9 items-center text-white">
+                <a th:href="@{/}" class="#">Inicio</a>
+                <a th:href="@{/peliculas}" class="#">Películas</a>
+                <a href="#" class="#">Horarios</a>
+                <div class="relative">
+                    <button id="servicesMenuBtn" class="bg-transparent flex items-center">
+                        Servicios
+                        <i class="fa-solid fa-chevron-down ml-1"></i> <!-- Icono de flecha hacia abajo -->
+                    </button>
+                    <div id="servicesDropdown" class="hidden absolute bg-primaryColor shadow-lg mt-2">
+                        <a th:href="@{/confiteria}" class="block px-4 py-2 text-black hover:bg-white">Confitería</a>
+                        <a href="#" class="block px-4 py-2 text-black hover:bg-white">Promociones</a>
+                        <a href="#" class="block px-4 py-2 text-black hover:bg-white">Contácto</a>
+                    </div>
+                </div>
+                <button class="border-2 border-black hover:bg-green-950 px-3 py-1">Iniciar</button>
+                <button class="border-2 border-black bg-secondaryColor hover:bg-green-950 px-3 py-1 text-white">Registrarse</button>
+            </div>
+        </div>
+    </div>
 <div align="center">
-    <h2 class="text-bold text-green-200">Películas</h2>
-    <a th:href="@{/peliculas/nuevo}" class="title-pelicula text-red-200 mt-8">Create new Moview <i class="fa-solid fa-caret-right"></i></a>
+    <a th:href="@{/peliculas/nuevo}" class="title-pelicula text-red-200 mt-8">Crear nueva película <i class="fa-solid fa-caret-right"></i></a>
     <br/><br>
     <table border="1" cellpadding="20" class="table table-dark">
         <thead class="titulos">
@@ -81,5 +112,7 @@
         </tbody>
     </table>
 </div>
+<footer th:replace="~{essentials/footer :: footer}"></footer>
+
 </body>
 </html>
