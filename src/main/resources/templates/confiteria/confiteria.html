@@ -27,8 +27,8 @@
                     <i id="hamburgerIcon" class="fa-solid fa-bars text-2xl"></i>
                 </button>
                 <div id="menu" class="hidden lg:flex px-6 py-3 space-x-9 items-center text-white">
-                    <a href="#" class="#">Inicio</a>
-                    <a href="#" class="#">Películas</a>
+                    <a th:href="@{/}" class="#">Inicio</a>
+                    <a th:href="@{/peliculas}" class="#">Películas</a>
                     <a href="#" class="#">Horarios</a>
                     <div class="relative">
                         <button id="servicesMenuBtn" class="bg-transparent flex items-center">
@@ -36,7 +36,7 @@
                             <i class="fa-solid fa-chevron-down ml-1"></i> <!-- Icono de flecha hacia abajo -->
                         </button>
                         <div id="servicesDropdown" class="hidden absolute bg-primaryColor shadow-lg mt-2">
-                            <a href="./confiteria/confiteria.html" class="block px-4 py-2 text-black hover:bg-white">Confitería</a>
+                            <a th:href="@{/confiteria}" class="block px-4 py-2 text-black hover:bg-white">Confitería</a>
                             <a href="#" class="block px-4 py-2 text-black hover:bg-white">Promociones</a>
                             <a href="#" class="block px-4 py-2 text-black hover:bg-white">Contácto</a>
                         </div>
