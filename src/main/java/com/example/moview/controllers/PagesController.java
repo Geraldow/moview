@@ -10,7 +10,7 @@ public class PagesController {
     // Rutas para todas las Páginas de Moview
     @GetMapping("/Movies")
     public String mostrarMovies() {
-        return "movies/Movies";
+        return "movies/movies";
     }
 
     @GetMapping("/confiteria")
