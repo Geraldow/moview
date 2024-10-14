@@ -50,7 +50,7 @@ public class PeliculaController {
      *         En este caso, es "/peliculas/lista-peliculas".
      */
     // === Path for list movie === //
-    @GetMapping("/lista")
+    @GetMapping
     public String mostrarPeliculas(Model model){
 
         List<Pelicula> listaPeliculas = peliculaService.searchAllObjects();
