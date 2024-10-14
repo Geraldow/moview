@@ -13,4 +13,10 @@ public class ConfiteriaController {
     public String mostrarConfiteria() {
         return "confiteria/confiteria";
     }
+
+    @GetMapping("/carrito")
+    public String mostrarCarrito() {
+        return "confiteria/cart";
+    }
+
 }
