@@ -29,10 +29,9 @@
                             <a href="#" class="block px-4 py-2 text-black hover:bg-white">Contácto</a>
                         </div>
                     </div>
-                    <button
-                            class="border-2 border-black hover:bg-secondaryColor hover:text-white px-3 py-1">Iniciar</button>
-                    <button
-                            class="border-2 border-black bg-secondaryColor hover:bg-green-950 px-3 py-1 text-white">Registrarse</button>
+                    <a th:href="@{/login}" class="border-2 border-black hover:bg-secondaryColor hover:text-white px-3 py-1 text-center">Iniciar</a>
+                    <a th:href="@{/register}" class="border-2 border-black bg-secondaryColor hover:bg-green-950 px-3 py-1 text-white text-center">Registrarse</a>
+                            
                 </div>
             </div>
         </div>
@@ -50,14 +49,13 @@
                         <i class="fa-solid fa-chevron-down ml-1"></i>
                     </button>
                     <div id="servicesDropdownMobile" class="hidden absolute bg-primaryColor shadow-lg mt-2 w-full">
-                        <a href="#" class="block w-auto px-4 py-2 text-black hover:bg-white">Confitería</a>
+                        <a th:href="@{/confiteria}" class="block w-auto px-4 py-2 text-black hover:bg-white">Confitería</a>
                         <a href="#" class="block w-auto px-4 py-2 text-black hover:bg-white">Promociones</a>
                         <a href="#" class="block w-auto px-4 py-2 text-black hover:bg-white">Contácto</a>
                     </div>
                 </div>
-                <button class="border-2 border-black hover:bg-white hover:text-black px-3 py-1">Iniciar</button>
-                <button
-                        class="border-2 border-black bg-secondaryColor hover:bg-green-950 px-3 py-1 text-white">Registrarse</button>
+                <a th:href="@{/login}" class="border-2 border-black hover:bg-white hover:text-black px-3 py-1 text-center">Iniciar</a>
+                <a tH:href="@{/register}" class="border-2 border-black bg-secondaryColor hover:bg-green-950 px-3 py-1 text-white text-center">Registrarse</a>
             </div>
         </div>
     </header>
