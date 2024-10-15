@@ -5,8 +5,13 @@
 <body class="bg-primaryColor">
     <!-- HEADER -->
     <header th:replace="~{essentials/header-user :: header-user}"></header>
+    
     <!-- CARTELERA -->
     <section th:replace="~{essentials/movies/cartelera :: cartelera}"></section>
+
+    <!-- FOOTER -->
+    <section th:replace="~{essentials/footer :: footer}"></section>
+
     <!-- DIRECTORIO JS -->
     <script th:src="@{/js/general.js}"></script>
 </body>
