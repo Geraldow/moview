@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org" lang="es">
+    <header th:fragment="header-user" class="h-16 w-full bg-secondaryColor static z-50">
+        <div class="flex justify-between items-center mx-8 lg:mx-24">
+            <div class="flex items-center space-x-4">
+                <i class="fa-regular fa-bell text-white text-2xl"></i>
+                <a href="#">
+                    <img th:src="@{/images/movies/user.svg}" class="min-h-14 max-h-14" alt="Logo Empresa">
+                </a>
+            </div>
+            <div class="flex items-center">
+                <button id="hamburger" class="text-primaryColor hover:text-white block lg:hidden p-3 mt-1">
+                    <i id="hamburgerIcon" class="fa-solid fa-bars text-2xl"></i>
+                </button>
+                <div id="menu" class="hidden lg:flex py-3 space-x-9 items-center text-white">
+                    <a th:href="@{/}" class="#">Inicio</a>
+                    <a th:href="@{/movies}" class="#">Películas</a>
+                    <a href="#" class="#">Horarios</a>
+                    <div class="relative">
+                        <button id="servicesMenuBtn" class="bg-transparent flex items-center">
+                            Servicios
+                            <i class="fa-solid fa-chevron-down ml-1"></i> <!-- Icono de flecha hacia abajo -->
+                        </button>
+                        <div id="servicesDropdown" class="border border-white hidden absolute bg-secondaryColor hover:text-white shadow-lg mt-2">
+                            <a th:href="@{/confiteria}" class="block px-4 py-2 text-white hover:text-black hover:bg-white">Confitería</a>
+                            <a href="#" class="block px-4 py-2 text-whi hover:bg-whitete hover:text-black hover:bg-white">Promociones</a>
+                            <a href="#" class="block px-4 py-2 text-white hover:text-black hover:bg-white">Contácto</a>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+        <!-- MENÚ DESPLEGABLE -->
+        <div id="dropdownMenu" class="hidden lg:hidden bg-secondaryColor absolute w-full z-50">
+            <div class="flex flex-col space-y-2 p-4">
+                <a href="#" class="text-white hover:text-black hover:bg-white ring-white p-2 hover:border-white">Inicio</a>
+                <a href="#" class="text-white hover:text-black hover:bg-white ring-white p-2 hover:border-white">Películas</a>
+                <a href="#" class="text-white hover:text-black hover:bg-white ring-white p-2 hover:border-white">Horarios</a>
+                <div class="relative">
+                    <button id="servicesMenuBtnMobile"
+                        class="text-white bg-transparent flex items-center w-full justify-between p-2">
+                        Servicios
+                        <i class="fa-solid fa-chevron-down ml-1"></i>
+                    </button>
+                    <div id="servicesDropdownMobile" class="border hidden absolute bg-secondaryColor shadow-lg mt-2 w-full">
+                        <a href="#" class="block w-auto px-4 py-2 text-white hover:text-black hover:bg-white">Confitería</a>
+                        <a href="#" class="block w-auto px-4 py-2 text-white hover:text-black hover:bg-white">Promociones</a>
+                        <a href="#" class="block w-auto px-4 py-2 text-white hover:text-black hover:bg-white">Contácto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</html>
