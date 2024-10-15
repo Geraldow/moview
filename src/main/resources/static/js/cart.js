@@ -28,15 +28,4 @@ function updateQuantity(productId, change) {
     document.getElementById('cart-count').textContent = totalCount;
 }
 
-function loadCart() {
-    const cartData = JSON.parse(localStorage.getItem('cart'));
-    if (cartData) {
-        Object.keys(cartData).forEach(productId => {
-            const quantity = cartData[productId];
-            productQuantities[productId] = quantity;
-            document.getElementById(`${productId}-quantity`).textContent = quantity;
-        });
-    }
-}
-
 
