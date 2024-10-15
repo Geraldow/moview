@@ -1434,6 +1434,10 @@ video {
   padding-top: 1rem;
 }
 
+.pb-4{
+  padding-bottom: 1rem;
+}
+
 .text-left{
   text-align: left;
 }
@@ -1709,6 +1713,11 @@ video {
 .hover\:bg-white:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#3b5a68\]:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 90 104 / var(--tw-bg-opacity));
 }
 
 .hover\:from-\[\#1f2f38\]:hover{
@@ -2063,6 +2072,10 @@ video {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .lg\:flex-row{
+    flex-direction: row;
+  }
+
   .lg\:gap-32{
     gap: 8rem;
   }
@@ -2087,9 +2100,24 @@ video {
     padding-right: 6rem;
   }
 
+  .lg\:px-12{
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
   .lg\:text-4xl{
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .lg\:text-3xl{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .lg\:text-5xl{
+    font-size: 3rem;
+    line-height: 1;
   }
 }
 
