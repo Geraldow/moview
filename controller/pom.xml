@@ -9,7 +9,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>service</artifactId>
+    <artifactId>controller</artifactId>
 
     <properties>
         <maven.compiler.source>22</maven.compiler.source>
@@ -18,10 +18,20 @@
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>net</groupId>
-            <artifactId>repository</artifactId>
+            <artifactId>frontend</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
+        <dependency>
+            <groupId>net</groupId>
+            <artifactId>service</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
+
+
 </project>

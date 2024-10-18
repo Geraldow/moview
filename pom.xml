@@ -27,6 +27,7 @@
 		<module>model</module>
 		<module>frontend</module>
 		<module>bootloader</module>
+		<module>controller</module>
 	</modules>
     <scm>
 		<connection/>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+    <section th:fragment="highlighted">
+        <div class="w-auto h-auto flex flex-col justify-center font-Overlock space-y-24 my-20 mx-8 lg:m-24">
+            <div class="items-center justify-center space-y-6">
+                <h2 class="text-center text-black text-4xl md:text-5xl xl:text-6xl font-bold">Bienvenidos al
+                    Autocine</h2>
+                <p class="text-center text-black font-semibold text-lg sm:text-xl xl:text-2xl">Disfruta de una
+                    experiencia única
+                    en nuestro autocine, donde la diversión está garantizada</p>
+            </div>
+
+            <div class="space-y-20">
+                <div>
+                    <h2 class="text-black font-bold text-2xl md:text-3xl xl:text-4xl">Calidad de Imagen y Sonido
+                        excepcionales para una <br>experiencia inmersiva</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-14 xl:gap-10">
+                    <div class="space-y-3 xl:space-y-6">
+                        <img th:src="@{/images/home/img-featured-1.png}" alt="">
+                        <h4 class="text-2xl font-bold">Comodidad en tu coche con amplios espacios y asientos
+                            reclinables</h4>
+                        <p class="font-semibold">Disfruta de una amplia variedad de películas de todos los géneros
+                        </p>
+                        <div class="font-extrabold"><a href="#">Ver más ></a></div>
+                    </div>
+
+                    <div class="space-y-3 xl:space-y-6">
+                        <img th:src="@{/images/home/img-featured-2.png}" alt="">
+                        <h4 class="text-2xl font-bold flex-1">Concesionario de confitería con deliciosos snacks y
+                            diversas bebidas</h4>
+                        <p class="font-semibold">Disfruta de tus películas favoritas mientras saboreas tus antojos
+                        </p>
+                        <div class="font-extrabold"><a href="#">Ver más ></a></div>
+                    </div>
+
+                    <div class="space-y-3 xl:space-y-6">
+                        <img th:src="@{/images/home/img-featured-3.png}" alt="">
+                        <h4 class="text-2xl font-bold">Tenemos una amplia selección de películas para todos los
+                            gustos y edades</h4>
+                        <p class="font-semibold">Desde clásicos hasta los últimos estrenos, tenemos todo para ti</p>
+                        <div class="font-extrabold"><a href="#">Ver más ></a></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</html>
