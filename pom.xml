@@ -22,11 +22,10 @@
 		<developer/>
 	</developers>
     <modules>
-		<module>controller</module>
-		<module>frontend</module>
-		<module>repository</module>
-        <module>model</module>
 		<module>service</module>
+		<module>repository</module>
+		<module>model</module>
+		<module>frontend</module>
 		<module>bootloader</module>
 	</modules>
     <scm>

@@ -16,14 +16,5 @@
         <maven.compiler.target>22</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <dependencies>
-
-        <dependency>
-            <groupId>net</groupId>
-            <artifactId>repository</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-    </dependencies>
 
 </project>
