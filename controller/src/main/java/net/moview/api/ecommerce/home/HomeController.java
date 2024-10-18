@@ -1,4 +1,4 @@
-package com.example.moview.controllers;
+package net.moview.api.ecommerce.home;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +19,6 @@ public class HomeController {
      */
     @GetMapping("/")
     public String mostrarPaginaInicio() {
-        return "/home";
+        return "home";
     }
 }
