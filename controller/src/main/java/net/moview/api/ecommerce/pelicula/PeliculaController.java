@@ -1,7 +1,8 @@
 package net.moview.api.ecommerce.pelicula;
 
-import com.example.moview.models.Pelicula;
-import com.example.moview.service.PeliculaService;
+
+import net.moview.business.pelicula.PeliculaService;
+import net.moview.entity.pelicula.Pelicula;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
