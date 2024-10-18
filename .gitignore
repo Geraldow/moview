@@ -31,4 +31,15 @@ build/
 
 ### Ocultando todas las dependencias ###
 .vscode/
-/src/main/frontend/node_modules/
+node_modules/
+
+# Archivos de registro
+npm-debug.log
+yarn-error.log
+
+# Archivos de entorno
+.env
+
+# Archivos de compilación
+dist/
+build/

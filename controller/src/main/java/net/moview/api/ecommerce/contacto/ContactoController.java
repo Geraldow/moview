@@ -1,4 +1,4 @@
-package com.example.moview.controllers;
+package net.moview.api.ecommerce.contacto;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
